@@ -99,7 +99,6 @@ main {
   color: var(--light);
 }
 
-
 .dark main {
   background-color: var(--dark-accent);
   color: var(--light);
