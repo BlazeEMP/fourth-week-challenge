@@ -1,27 +1,32 @@
 // TODO: Create logic to toggle the light/dark mode styles for the page and circle. The mode should be saved to local storage.
 const toggle = document.getElementById('toggle');
+// dark mode selection
 let darkMode = localStorage.getItem('darkMode');
 let tempStorageObject = {};
 
 if (darkMode == "true") {
   toggle.textContent = "Dark Mode";
+  document.body.classList.remove("light");
 } else if (darkMode == "false") {
   toggle.textContent = "Light Mode";
-} else { // default if never visited page
-  toggle.textContent = "Light Mode";
-}
+  document.body.classList.add("light");
+}// else { // default if never visited page
+//   toggle.textContent = "Light Mode";
+// }
 
 toggle.addEventListener('click', function() {
   if (darkMode != true) {
     darkMode = true;
     localStorage.setItem('darkMode', darkMode);
     toggle.textContent = "Dark Mode";
-    // add all dark mode style by enabling (reference CSS)
+    document.body.classList.remove("light");
 
   } else {
     darkMode = false;
     localStorage.setItem('darkMode', darkMode);
     toggle.textContent = "Light Mode";
+    document.body.classList.add("light");
+
   }
 });
 
